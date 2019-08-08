@@ -7,8 +7,8 @@
     "create-react-slides": "./bin/create-react-slides.js"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/jbonigomes/create-react-slides.git"
+    "type": "git",
+    "url": "https://github.com/jbonigomes/create-react-slides.git"
   },
   "scripts": {
     "start": "parcel ./src/index.html",

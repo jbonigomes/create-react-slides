@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
 import { routes } from '../../routes'
 
+import Clock from '../Clock'
 import styles from './index.scss'
 
 const mapStateToProps = (state) => ({
