@@ -1,6 +1,6 @@
 {
   "name": "@jbonigomes/create-react-slides",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React presentation deck framework heavily inspired by Impress.js",
   "main": "src/index.js",
   "bin": {

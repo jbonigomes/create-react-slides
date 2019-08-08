@@ -33,10 +33,10 @@ the `Img` component. Samples provided in the slides.
 You can add fonts via WebFontLoader (Google fonts and the likes), in the
 `index.js` file.
 
-## Code hightligthing
+## Code highligthing
 
-Code hightligthing is done via [Prism.js](https://prismjs.com), wrapped via the
-`Hightlight` component. By default it will only hightlight Markup, CSS, JS and
+Code highligthing is done via [Prism.js](https://prismjs.com), wrapped via the
+`Highlight` component. By default it will only highlight Markup, CSS, JS and
 C-Like languages. You can however load other languages on
-`src/components/Hightlight/index.js`. Samples on usage are included in the
+`src/components/Highlight/index.js`. Samples on usage are included in the
 sample slides.
