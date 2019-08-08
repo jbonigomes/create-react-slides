@@ -1,4 +1,4 @@
-# React Impress Like Slides
+# Create React Slides
 
 This is a React app heavily inspired by the known and loved
 [Impress.js](https://impress.js.org).
