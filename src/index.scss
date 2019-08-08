@@ -1,0 +1,77 @@
+$grey: #777;
+$black: #333;
+$white: #FFF;
+$textGradientDark: #B68;
+$textGradientLight: #357;
+$radialGradientDark: #BEBEBE;
+$radialGradientLight: #F0F0F0;
+$textShadow: rgba(100, 100, 100, .5);
+$transparent: rgba(255, 255, 255, .5);
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: $black;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  background: radial-gradient($radialGradientLight, $radialGradientDark);
+}
+
+p {
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0 0 30px 0;
+  font-family: 'Lobster Two', cursive;
+
+  background: -webkit-linear-gradient(30deg, $textGradientLight, $textGradientDark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+blockquote {
+  color: $grey;
+  font-size: 18px;
+  text-align: center;
+  font-style: italic;
+}
+
+ul {
+  font-size: 24px;
+  text-align: left;
+  padding: 40px 80px;
+  border-radius: 5px;
+  background: $transparent;
+}
+
+em {
+  width: 32px;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0 2px 2px 2px;
+  vertical-align: middle;
+  background: $transparent;
+  text-shadow: -1px -1px 2px $textShadow;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  transition: .5s;
+  border-radius: 5px;
+  text-decoration: none;
+  background: $transparent;
+  padding: 0 15px 5px 15px;
+  text-shadow: -1px -1px 2px $textShadow;
+}
+
+a:hover,
+a:focus {
+  background: $white;
+}

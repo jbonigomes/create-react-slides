@@ -1,0 +1,58 @@
+.wrapper {
+  width: 800px;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.enterForward {
+  opacity: 0;
+  left: 2000px;
+}
+
+.leaveForward {
+  left: 0;
+  opacity: 1;
+}
+
+.enterActiveForward {
+  left: 0;
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+
+.leaveActiveForward {
+  opacity: 0;
+  left: -2000px;
+  transition: all .5s ease-in-out;
+}
+
+.enterBackward {
+  opacity: 0;
+  left: -2000px;
+}
+
+.leaveBackward {
+  left: 0;
+  opacity: 1;
+}
+
+.enterActiveBackward {
+  left: 0;
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+
+.leaveActiveBackward {
+  opacity: 0;
+  left: 2000px;
+  transition: all .5s ease-in-out;
+}

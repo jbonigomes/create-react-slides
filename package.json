@@ -1,0 +1,40 @@
+{
+  "name": "@jbonigomes/create-react-slides",
+  "version": "1.0.0",
+  "description": "React presentation deck framework heavily inspired by Impress.js",
+  "main": "src/index.js",
+  "bin": {
+    "create-react-slides": "./bin/create-react-slides.js"
+  },
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "lint": "prettier --write 'src/**/*.js'"
+  },
+  "keywords": [
+    "React",
+    "Slides",
+    "Deck",
+    "Presentation",
+    "Impress.js",
+    "Prism.js"
+  ],
+  "author": "Jose B. Gomes",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.8.6",
+    "react-impressjs": "^1.1.0",
+    "react-redux": "^7.1.0",
+    "react-syntax-highlighter": "^11.0.2",
+    "redux": "^4.0.4",
+    "sass": "^1.22.7",
+    "src": "^1.1.2",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "postcss-modules": "^1.4.1"
+  }
+}
