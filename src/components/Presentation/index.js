@@ -44,7 +44,7 @@ const Presentation = ({ back, next, slide, direction }) => {
       >
         <div key={slide}>{routes[slide]}</div>
       </ReactCSSTransitionGroup>
-      <Clock minutes={80} />
+      <Clock minutes={15} />
     </>
   )
 }

@@ -7,39 +7,35 @@ const draw = (mins) => {
   const width = 60
   const height = 60
   const radius = 50
-  const spacing = .2
+  const spacing = 0.2
 
   let minutes = 0
   let seconds = 0
 
   const fields = () => {
-    seconds = seconds + (1 / 60)
+    seconds = seconds + 1 / 60
 
     if (seconds >= 1) {
       seconds = 0
-      minutes = minutes + (1 / mins)
+      minutes = minutes + 1 / mins
 
       if (minutes >= 1) {
         minutes = 0
       }
     }
 
-    return [
-      { index: .4, value: minutes },
-      { index: .1, value: seconds },
-    ]
+    return [{ index: 0.4, value: minutes }, { index: 0.1, value: seconds }]
   }
 
   const tick = () => {
     field
-      .each((d, i, arr) => arr[i]._value = d.value)
+      .each((d, i, arr) => (arr[i]._value = d.value))
       .data(fields)
-      .each((d, i, arr) => d.previousValue = arr[i]._value)
+      .each((d, i, arr) => (d.previousValue = arr[i]._value))
       .transition()
       .duration(500)
       .each((_, i, arr) => {
-        d3
-          .select(arr[i])
+        d3.select(arr[i])
           .transition()
           .select('.arc-body')
           .attrTween('d', (d) => {
@@ -64,7 +60,8 @@ const draw = (mins) => {
               .interpolate((a, b) => {
                 const i = d3.interpolateString(a, b)
                 return (t) => d3.hsl(i(t))
-              })(d.value))
+              })(d.value),
+          )
       })
 
     setTimeout(tick, 1000)
@@ -90,7 +87,5 @@ const draw = (mins) => {
 export default ({ minutes }) => {
   useEffect(() => draw(minutes), [])
 
-  return (
-    <div id="clock" className={styles.clock} />
-  )
+  return <div id="clock" className={styles.clock} />
 }

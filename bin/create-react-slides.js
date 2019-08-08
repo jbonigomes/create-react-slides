@@ -4,7 +4,7 @@
 
 const appName = process.argv[2];
 const { spawnSync } = require('child_process');
-const url = 'ssh://git@stash.barcapint.com:7999/~g01236638/react-impress-like-slides.git';
+const url = 'git@github.com:jbonigomes/create-react-slides.git';
 
 spawnSync('git', ['clone', url, `${process.cwd()}/${appName}`]);
 spawnSync('npm', ['install', '--prefix', `${process.cwd()}/${appName}`]);
