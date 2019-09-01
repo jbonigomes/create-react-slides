@@ -4,30 +4,26 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import { throttle } from 'lodash'
 import { connect } from 'react-redux'
 
-import Clock from '../Clock'
 import styles from './index.scss'
 
-import { routes } from '../../routes'
-
 const mapStateToProps = (state) => ({
-  slide: state.slide,
-  direction: state.slide > state.previous ? 'Forward' : 'Backward',
+  step: state.step,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  next: () => dispatch({ type: 'next' }),
-  back: () => dispatch({ type: 'back' }),
+  next: (steps) => dispatch({ type: 'next-step', steps }),
+  back: (steps) => dispatch({ type: 'back-step', steps }),
 })
 
-const Presentation = ({ back, next, slide, direction }) => {
+const Slide = ({ back, next, step, children }) => {
   useEffect(() => {
     const handler = throttle((e) => {
-      if (e.keyCode === 37) {
-        back()
+      if (e.keyCode === 38) {
+        back(React.Children.count(children))
       }
 
-      if (e.keyCode === 39 || e.keyCode === 32) {
-        next()
+      if (e.keyCode === 40) {
+        next(React.Children.count(children))
       }
     }, 500)
 
@@ -43,15 +39,16 @@ const Presentation = ({ back, next, slide, direction }) => {
         transitionEnterTimeout={500}
         transitionLeaveTimeout={500}
         transitionName={{
-          leave: styles[`leave${direction}`],
-          enter: styles[`enter${direction}`],
-          enterActive: styles[`enterActive${direction}`],
-          leaveActive: styles[`leaveActive${direction}`],
+          leave: styles.leave,
+          enter: styles.enter,
+          enterActive: styles.enterActive,
+          leaveActive: styles.leaveActive,
         }}
       >
-        <div key={slide}>{routes[slide]}</div>
+        {React.Children.map(children, (child, i) => {
+          if (i === step) return child
+        })}
       </ReactCSSTransitionGroup>
-      <Clock minutes={5} />
     </>
   )
 }
@@ -59,4 +56,4 @@ const Presentation = ({ back, next, slide, direction }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Presentation)
+)(Slide)

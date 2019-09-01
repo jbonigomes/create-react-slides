@@ -5,6 +5,7 @@ import Slide2 from './slides/Slide2'
 import Slide3 from './slides/Slide3'
 import Slide4 from './slides/Slide4'
 import Slide5 from './slides/Slide5'
+import Slide6 from './slides/Slide6'
 
 export const routes = [
   <Slide1 />,
@@ -12,4 +13,5 @@ export const routes = [
   <Slide3 />,
   <Slide4 />,
   <Slide5 />,
+  <Slide6 />,
 ]
