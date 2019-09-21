@@ -8,7 +8,7 @@ components leaving the slides author free to be creative.
 
 ## Getting started
 
-    npx create-react-slides my-awesome-presentation
+    npx @jbonigomes/create-react-slides my-awesome-presentation
     cd my-awesome-presentation
     npm start
 
